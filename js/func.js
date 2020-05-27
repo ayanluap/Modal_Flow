@@ -1,33 +1,81 @@
-// Event type Popup show
-setTimeout(() => {
+///////////////// EVENT TYPE FUNC ///////////
+
+// Open Event Type Modal
+function eventTypeModalOpen() {
   eventType.style.display = 'block';
-}, 1000);
-
-// Event type Popup show on clicking btn
-function popup1() {
-  if (document.querySelector('.popup1').clicked == true) {
-    alert('button was clicked');
-  }
+  addDisable();
 }
 
-// close modal when click on cross
-function closeModal() {
+// Close Event Type Modal
+function eventTypeModalClose() {
   eventType.style.display = 'none';
+  addDisable();
 }
 
-// close modal when click on outside
+// Close modals on outside click
 function outsideClick(e) {
-  if (e.target === eventType) {
-    eventType.style.display = 'none';
+  if (e.target == eventType) {
+    eventTypeModalClose();
+  } else if (e.target == paidEvent) {
+    paidEventModalClose();
+    eventTypeModalOpen();
   }
 }
 
-// Enable event type btn
-function enableEventTypeNext() {
-  console.log(this);
+// Add and Remove "disable" on Event Type Next
+function remDisable(e) {
+  eventTypeNext.classList.remove('disabled');
+}
+function addDisable(e) {
+  eventTypeNext.classList.add('disabled');
+}
 
-  if (this.classList.contains('disabled')) {
-    // pfBtn.classList.remove('disabled');
-    console.log(212);
+// diable or enable next btn based on where clicked
+function disableEnableEventTypeNext(e) {
+  if (e.target === free || e.target === paid) {
+    remDisable();
+  } else {
+    addDisable();
+  }
+}
+
+// Event Type Next btn click
+function popup2() {
+  if (eventTypeNext.classList.contains('disabled')) {
+    alert('Choose any one to proceed');
+  } else {
+    paidEventModalOpen();
+  }
+}
+
+///////////////// PAID EVENT FUNC ///////////
+
+// Open Paid Event Modal after Clicking Next
+function paidEventModalOpen() {
+  eventTypeModalClose();
+  paidEvent.style.display = 'block';
+}
+
+// Close Paid Event Modal
+function paidEventModalClose() {
+  eventTypeModalOpen();
+  paidEvent.style.display = 'none';
+}
+
+// Remove / Add paid Event next disable
+function addDisable2() {
+  paidEventNext.classList.add('disabled');
+}
+function remDisable2() {
+  paidEventNext.classList.remove('disabled');
+}
+
+// diable or enable next btn based on where clicked
+function disableEnablePaidEventNext(e) {
+  console.log(e);
+  if (e.target === single || e.target === mult) {
+    remDisable2();
+  } else {
+    addDisable2();
   }
 }

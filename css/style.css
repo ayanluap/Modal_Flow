@@ -7,9 +7,15 @@
 
 /* Utility */
 
+.popBtn1 {
+  margin: 3rem;
+}
+
 .btn:focus,
-#price:focus {
+#price:focus,
+button:focus {
   box-shadow: none;
+  outline: none;
 }
 
 .btn-outline-success:focus {
@@ -41,9 +47,19 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
+#paidEvent .align-self-center {
+  border: none;
+  background-color: #fff;
+  margin: 0 0 12px 10px;
+  cursor: pointer;
+}
+
 /* Event type */
 
-#eventType {
+#eventType,
+#paidEvent,
+#priceAvail,
+#multTckt {
   display: none;
   z-index: 1;
   position: fixed;
@@ -55,30 +71,17 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#eventType .modal-content {
+#eventType .modal-content,
+#paidEvent .modal-content,
+#priceAvail .modal-content,
+#multTckt .modal-content {
   width: 500px;
   margin: 10% auto;
   animation-name: rolling;
   animation-duration: 0.2s;
 }
 
-/* Paid Event */
-
-#paidEvent {
-  display: none;
-}
-
-/* Price & Availability */
-
-#priceAvail {
-  display: none;
-}
-
-/* Multiple Ticket */
-
-#multTckt {
-  display: none;
-}
+/* Keyframes */
 
 @keyframes rolling {
   from {

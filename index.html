@@ -28,12 +28,12 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
 
-    <title>Modals Flow</title>
+    <title>Nested Modals</title>
   </head>
 
   <body>
     <!-- Event type button  -->
-    <button class="btn btn-secondary popup1">
+    <button class="btn btn-secondary popBtn1">
       Get Event Type Popup
     </button>
 
@@ -54,6 +54,7 @@
               <i class="fas fa-donate fa-3x my-2"></i>
               <p class="mt-2">PAID</p>
             </button>
+
             <button class="btn btn-outline-danger px-5">
               <i class="fas fa-gift fa-3x my-2"></i>
               <p class="mt-2">FREE</p>
@@ -69,139 +70,127 @@
     </div>
 
     <!-- Paid Event -->
-    <div id="paidEvent" class="" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="d-flex">
-              <i class="fas fa-arrow-left align-self-center mr-5"></i>
-              <h3 class="modal-title">Paid Event</h3>
-            </div>
+    <div id="paidEvent" class="paidEvent-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="d-flex">
+            <i class="fas fa-arrow-left align-self-center mt-3 mr-5"></i>
+            <h3 class="modal-title">Paid Event</h3>
           </div>
-          <div class="modal-body">
-            <div class="paidEventHead d-flex">
-              <p class="lead">Single-cost event or multiple-cost event?</p>
-              <button
-                class="align-self-center mb-3"
-                data-toggle="tooltip"
-                data-placement="top"
-                title="This is a tooltip. Use it to show if there is any help text."
-              >
-                <i class="far fa-question-circle text-muted"></i>
-              </button>
-            </div>
-            <div class="d-flex flex-row justify-content-around eventTypeBtn">
-              <button class="btn btn-outline-info px-5">
-                <i class="fas fa-gift fa-3x mt-2"></i>
-                <p class="mt-2">SINGLE COST</p>
-              </button>
-              <button class="btn btn-outline-primary px-5">
-                <i class="fas fa-donate fa-3x mt-2"></i>
-                <p class="mt-2">MULTIPLE COST</p>
-              </button>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-primary">
-              Next<i class="fas fa-arrow-right ml-2"></i>
+        </div>
+        <div class="modal-body">
+          <div class="paidEventHead d-flex">
+            <p class="lead">Single-cost event or multiple-cost event?</p>
+            <button
+              class="align-self-center"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="This is a tooltip. Use it to show if there is any help text."
+            >
+              <i class="far fa-question-circle text-muted"></i>
             </button>
           </div>
+          <div class="d-flex flex-row justify-content-around eventTypeBtns">
+            <button class="btn btn-outline-info px-5">
+              <i class="fas fa-gift fa-3x mt-2"></i>
+              <p class="mt-2">SINGLE COST</p>
+            </button>
+            <button class="btn btn-outline-primary px-5">
+              <i class="fas fa-donate fa-3x mt-2"></i>
+              <p class="mt-2">MULTIPLE COST</p>
+            </button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary paidEventNext disabled">
+            Next<i class="fas fa-arrow-right ml-2"></i>
+          </button>
         </div>
       </div>
     </div>
 
     <!-- Price Availability -->
-    <div id="priceAvail" class="" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="d-flex">
-              <i class="fas fa-arrow-left align-self-center mr-5"></i>
-              <h3 class="modal-title">Price & Availability</h3>
+    <div id="priceAvail" class="priceAvail-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="d-flex">
+            <i class="fas fa-arrow-left align-self-center mr-5"></i>
+            <h3 class="modal-title">Price & Availability</h3>
+          </div>
+        </div>
+        <div class="modal-body">
+          <p class="lead">Price of Ticket ?</p>
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fas fa-rupee-sign mr-1"></i
+                ><i class="fas fa-caret-down"></i>
+              </div>
+              <input
+                type="number"
+                name="price"
+                id="price"
+                class="form-control"
+              />
             </div>
           </div>
-          <div class="modal-body">
-            <p class="lead">Price of Ticket ?</p>
-            <div class="input-group mb-4">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="fas fa-rupee-sign mr-1"></i
-                  ><i class="fas fa-caret-down"></i>
-                </div>
-                <input
-                  type="number"
-                  name="price"
-                  id="price"
-                  class="form-control"
-                />
-              </div>
+          <p class="lead">Availability ?</p>
+          <div class="checkbox d-flex justify-content-start mb-3">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                value="option1"
+              />
+              <label class="form-check-label" for="inlineRadio1">Online</label>
             </div>
-            <p class="lead">Availability ?</p>
-            <div class="checkbox d-flex justify-content-start mb-3">
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio1"
-                  value="option1"
-                />
-                <label class="form-check-label" for="inlineRadio1"
-                  >Online</label
-                >
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio2"
-                  value="option2"
-                />
-                <label class="form-check-label" for="inlineRadio2"
-                  >Offline</label
-                >
-              </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio2"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineRadio2">Offline</label>
             </div>
           </div>
-          <div class="modal-footer">
-            <button class="btn btn-success">
-              Done<i class="fas fa-thumbs-up ml-2"></i>
-            </button>
-          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success disabled">
+            Done<i class="fas fa-thumbs-up ml-2"></i>
+          </button>
         </div>
       </div>
     </div>
 
     <!-- Multiple Tickets -->
-    <div id="multTckt" class="" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="d-flex">
-              <i class="fas fa-arrow-left align-self-center mr-5"></i>
-              <h3 class="modal-title">Multiple Ticket</h3>
-            </div>
-            <button class="btn btn-outline-primary">
-              <i class="fas fa-plus mr-2"></i>
-              Category
-            </button>
+    <div id="multTckt" class="multTckt-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="d-flex">
+            <i class="fas fa-arrow-left align-self-center mr-5"></i>
+            <h3 class="modal-title">Multiple Ticket</h3>
           </div>
-          <div class="modal-body"></div>
-          <div class="modal-footer d-flex justify-content-between">
-            <div id="total-cost">
-              <p class="bold-texts">Total cost : 0</p>
-            </div>
-            <button class="btn btn-success">
-              Done<i class="fas fa-thumbs-up ml-2"></i>
-            </button>
+          <button class="btn btn-outline-primary">
+            <i class="fas fa-plus mr-2"></i>
+            Category
+          </button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer d-flex justify-content-between">
+          <div id="total-cost">
+            <p class="bold-texts">Total cost : 0</p>
           </div>
+          <button class="btn btn-success disabled">
+            Done<i class="fas fa-thumbs-up ml-2"></i>
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -218,7 +207,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- <script src="./js/ui.js"></script> -->
     <script src="./js/func.js"></script>
     <script src="./js/app.js"></script>
   </body>

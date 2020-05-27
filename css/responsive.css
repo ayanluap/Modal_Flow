@@ -1,5 +1,14 @@
 @media only screen and (max-width: 991px) {
-  #eventType .modal-content {
+  #eventType .modal-content,
+  #paidEvent .modal-content,
+  #priceAvail .modal-content,
+  #multTckt .modal-content {
     width: 80%;
+  }
+
+  #paidEvent .modal-content .btn-outline-info,
+  #paidEvent .modal-content .btn-outline-primary {
+    font-size: 0.8rem;
+    padding: 10px 12px;
   }
 }

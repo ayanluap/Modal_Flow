@@ -1,0 +1,16 @@
+/* Utility */
+
+.btn:focus,
+#price:focus {
+  box-shadow: none;
+}
+
+.btn-outline-success:focus {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-outline-danger:focus {
+  background-color: #dc3545;
+  color: white;
+}

@@ -1,3 +1,10 @@
+/* reset all */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Utility */
 
 .btn:focus,
@@ -13,4 +20,71 @@
 .btn-outline-danger:focus {
   background-color: #dc3545;
   color: white;
+}
+
+.btn-outline-info:focus {
+  background-color: #17a2bb;
+  color: white;
+}
+
+.btn-outline-primary:focus {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.fa-arrow-left {
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.fa-arrow-left:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Event type */
+
+#eventType {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#eventType .modal-content {
+  width: 500px;
+  margin: 10% auto;
+  animation-name: rolling;
+  animation-duration: 0.2s;
+}
+
+/* Paid Event */
+
+#paidEvent {
+  display: none;
+}
+
+/* Price & Availability */
+
+#priceAvail {
+  display: none;
+}
+
+/* Multiple Ticket */
+
+#multTckt {
+  display: none;
+}
+
+@keyframes rolling {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -26,45 +26,49 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
 
     <title>Modals Flow</title>
   </head>
 
-  <button class="btn btn-primary" data-toggle="modal" data-target="#eventType">
-    Event Type Load
-  </button>
   <body>
-    <div id="eventType" class="modal fade" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title">Event Type</h3>
-            <div class="close" data-dismiss="modal">&times;</div>
+    <!-- Event type button  -->
+    <button class="btn btn-secondary popup1">
+      Get Event Type Popup
+    </button>
+
+    <!-- Event Type -->
+
+    <div id="eventType" class="eventType-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Event Type</h3>
+          <div class="close" data-dismiss="modal">&times;</div>
+        </div>
+        <div class="modal-body">
+          <div class="eventTypeHead">
+            <p class="lead">Paid-Event or Free-Event ?</p>
           </div>
-          <div class="modal-body">
-            <div class="eventTypeHead">
-              <p class="lead">Paid-Event or Free-Event ?</p>
-            </div>
-            <div class="d-flex flex-row justify-content-around eventTypeBtn">
-              <button class="btn btn-outline-success px-5">
-                <i class="fas fa-donate fa-3x my-2"></i>
-                <p class="mt-2">PAID</p>
-              </button>
-              <button class="btn btn-outline-danger px-5">
-                <i class="fas fa-gift fa-3x my-2"></i>
-                <p class="mt-2">FREE</p>
-              </button>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-primary">
-              Next<i class="fas fa-arrow-right ml-2"></i>
+          <div class="d-flex flex-row justify-content-around eventTypeBtn">
+            <button class="btn btn-outline-success px-5">
+              <i class="fas fa-donate fa-3x my-2"></i>
+              <p class="mt-2">PAID</p>
+            </button>
+            <button class="btn btn-outline-danger px-5">
+              <i class="fas fa-gift fa-3x my-2"></i>
+              <p class="mt-2">FREE</p>
             </button>
           </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary eventTypeNext disabled">
+            Next<i class="fas fa-arrow-right ml-2"></i>
+          </button>
         </div>
       </div>
     </div>
 
+    <!-- Paid Event -->
     <div id="paidEvent" class="" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -106,6 +110,7 @@
       </div>
     </div>
 
+    <!-- Price Availability -->
     <div id="priceAvail" class="" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -132,7 +137,7 @@
               </div>
             </div>
             <p class="lead">Availability ?</p>
-            <div class="checkbox d-flex justify-content-between mb-3">
+            <div class="checkbox d-flex justify-content-start mb-3">
               <div class="form-check form-check-inline">
                 <input
                   class="form-check-input"
@@ -168,6 +173,7 @@
       </div>
     </div>
 
+    <!-- Multiple Tickets -->
     <div id="multTckt" class="" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -212,6 +218,8 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- <script src="./js/ui.js"></script> -->
+    <script src="./js/func.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>
